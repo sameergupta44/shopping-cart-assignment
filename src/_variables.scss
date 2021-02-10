@@ -1,0 +1,25 @@
+@function new-breakpoint($query: $feature $value) {
+  @return $query;
+}
+
+@mixin media($query: $feature $value) {
+  $media-query: "screen and (" + nth($query , 1 ) + ": " + nth($query, 2) + ")";
+  @media #{$media-query} {
+    @content;
+  }
+}
+
+//variables
+$font-dosis : '"Dosis", sans-serif;';
+
+// $large-desktop: new-breakpoint(min-width 77.438em);// max 1239.008px
+// $small-desktop: new-breakpoint(min-width 63.938em);// max 1023.008px
+// $tablet: new-breakpoint(min-width 47.938em); // max 767.008px
+// $mobile: new-breakpoint(min-width 39.938em);// max 639.008px
+
+$large-desktop: new-breakpoint(min-width 75em);// max 1200px
+$small-desktop: new-breakpoint(min-width 62em);// max 992px
+$tablet: new-breakpoint(min-width 48em); // max 768px
+$large-mobile: new-breakpoint(min-width 34em);// max 544px
+
+
