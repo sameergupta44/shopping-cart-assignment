@@ -9,20 +9,24 @@ import { environment } from '../../environments/environment';
 import * as fromLogin from './login/login.reducer';
 import * as fromHome from './home/home.reducer';
 import * as fromProduct from './products/products.reducer';
+import * as fromCart from './cart/cart.reducer';
 import { LoginState } from '../interface/LoginState';
 import { HomeState } from '../interface/HomeState';
 import { ProductState } from '../interface/ProductState';
+import { CartState } from '../interface/CartState';
 
 export interface State {
   login: LoginState;
   home: HomeState;
   product: ProductState;
+  cart: CartState;
 }
 
 export const reducers: ActionReducerMap<State> = {
   login: fromLogin.reducer,
   home: fromHome.reducer,
-  product: fromProduct.reducer
+  product: fromProduct.reducer,
+  cart: fromCart.reducer,
 };
 
 
@@ -61,3 +65,18 @@ const getProductData = (state: ProductState) => {
 
 export const getProductDataSelector = createSelector(getProductState, getProductData);
 
+/**
+ * Cart Selectors
+ */
+const getCartState = (state: State) => state.cart;
+const getCartItems = (state: CartState) => {
+  return state.cart;
+};
+
+const getCartItemsCount = (state: CartState) => {
+  const totalItemCount = state.cart.reduce((count, item) => count + item.quantity, 0);
+  return totalItemCount;
+};
+
+export const getCartItemsSelector = createSelector(getCartState, getCartItems);
+export const getCartItemsCountSelector = createSelector(getCartState, getCartItemsCount);

@@ -17,7 +17,7 @@
       </div>
       <div class="content-bottom">
         <img width="25" alt="Cart Logo" src="assets/images/cart.svg" />
-        <span class="cart-text"> 0 items </span>
+        <span class="cart-text"> {{ (cartData$ | async)?.length }} items </span>
       </div>
     </div>
   </nav>
