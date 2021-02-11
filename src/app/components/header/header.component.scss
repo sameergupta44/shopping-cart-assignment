@@ -1,0 +1,56 @@
+header .toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #eef0e2;
+  color: white;
+  font-weight: 600;
+  padding: 0 16px;
+
+  a {
+    margin: 5px;
+  }
+
+  .content-left {
+    display: flex;
+
+    img {
+      margin: 0 16px;
+    }
+
+    .menu-items {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .content-right {
+    display: flex;
+    flex-direction: column;
+
+    .content-top {
+      display: flex;
+    }
+
+    .content-bottom {
+      display: flex;
+      justify-content: center;
+
+      img {
+        margin: 0 5px;
+      }
+
+      .cart-text{
+        color: black;
+      }
+    }
+  }
+}

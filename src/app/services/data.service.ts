@@ -16,6 +16,10 @@ export class DataService {
     return this.http.get(this.HOST_NAME + '/banners');
   }
 
+  getProductsData(): Observable<any> {
+    return this.http.get(this.HOST_NAME + '/products');
+  }
+
   loginCheck(data: any): Observable<any> {
     console.log(data);
     return of(data).pipe(

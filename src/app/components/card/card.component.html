@@ -1,0 +1,11 @@
+<div class="card">
+  <img [src]="'http://localhost/' + item.imageURL" alt="Avatar" style="width:100%" />
+  <div class="container">
+    <h4><b>John Doe</b></h4>
+    <p>somethinf</p>
+  </div>
+  <div class="controls">
+    <label>MRP Rs {{item?.price}}</label>
+    <button (click)="addToCart(item)">Add To Cart</button>
+  </div>
+</div>

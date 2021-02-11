@@ -14,6 +14,9 @@ import { EffectsModule } from '@ngrx/effects';
 import { LoginEffects } from './reducers/login/login.effects';
 import { HomeEffects } from './reducers/home/home.effects';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ProductsComponent } from './pages/products/products.component';
+import { ProductsEffects } from './reducers/products/products.effects';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     LoginComponent,
     RegisterComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ProductsComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +44,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     EffectsModule.forRoot([
       LoginEffects,
       HomeEffects,
+      ProductsEffects
     ])
   ],
   providers: [],

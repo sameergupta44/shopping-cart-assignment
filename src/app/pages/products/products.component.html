@@ -1,0 +1,6 @@
+<div class="product-container">
+  <!-- {{productsData$ | async | json }} -->
+  <ng-container *ngFor="let item of (productsData$ | async)">
+    <app-card [item]="item" (addCart)="addToCart($event)"></app-card>
+  </ng-container>
+</div>
