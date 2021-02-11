@@ -1,6 +1,10 @@
 <div class="product-container">
-  {{cartData$ | async | json }}
-  <ng-container *ngFor="let item of (productsData$ | async)">
-    <app-card [item]="item" (addCart)="addToCart($event)"></app-card>
-  </ng-container>
+  <!-- {{cartData$ | async | json }} -->
+  <app-cart-summary [cartDetails$]="cartData$"></app-cart-summary>
+  <!-- <br> -->
+  <div class="product-items-container">
+    <ng-container *ngFor="let item of (productsData$ | async)">
+      <app-card [item]="item" (addCart)="addToCart($event)"></app-card>
+    </ng-container>
+  </div>
 </div>

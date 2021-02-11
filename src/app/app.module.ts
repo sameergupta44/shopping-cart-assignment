@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ProductsComponent } from './pages/products/products.component';
 import { ProductsEffects } from './reducers/products/products.effects';
 import { CardComponent } from './components/card/card.component';
+import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CardComponent } from './components/card/card.component';
     HeaderComponent,
     FooterComponent,
     ProductsComponent,
-    CardComponent
+    CardComponent,
+    CartSummaryComponent
   ],
   imports: [
     BrowserModule,

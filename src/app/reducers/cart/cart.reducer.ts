@@ -16,12 +16,11 @@ export const reducer = createReducer(
     const index = state.cart.findIndex(obj => obj.id === data.payload.id);
     console.log('index: ' + index);
     if (index > -1) {
-      // state.cart[index].quantity += 1;
       return {
         ...state,
         cart: state.cart.map(o => {
           if (o.id === data.payload.id) {
-            return {...o, quantity: (o.quantity + 1)}
+            return {...o, quantity: (o.quantity + 1)};
           }
           return o;
         })

@@ -78,5 +78,12 @@ const getCartItemsCount = (state: CartState) => {
   return totalItemCount;
 };
 
+const getCartTotal = (state: CartState) => {
+  const totalItemAmount = state.cart.reduce((amount, item) => amount + (item.quantity * item.price), 0);
+  return totalItemAmount;
+};
+
 export const getCartItemsSelector = createSelector(getCartState, getCartItems);
 export const getCartItemsCountSelector = createSelector(getCartState, getCartItemsCount);
+export const getCartTotalSelector = createSelector(getCartState, getCartTotal);
+
