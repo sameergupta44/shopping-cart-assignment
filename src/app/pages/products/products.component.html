@@ -1,5 +1,5 @@
 <div class="product-container">
-  <!-- {{cartData$ | async | json }} -->
+  <!-- Length: {{ (productsFilteredData$ | async)?.length }} -->
   <app-cart-summary [cartDetails$]="cartData$"></app-cart-summary>
   <!-- <br> -->
   {{ filterData$ | async | json }}
@@ -8,7 +8,7 @@
       <app-sidebar [categoriesData$]="categoriesData$" (filter)="filterVal($event)"></app-sidebar>
     </div>
     <div class="product-items-container">
-      <ng-container *ngFor="let item of (productsData$ | async)">
+      <ng-container *ngFor="let item of (productsFilteredData$ | async)">
         <app-card [item]="item" (addCart)="addToCart($event)"></app-card>
       </ng-container>
     </div>
