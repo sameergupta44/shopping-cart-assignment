@@ -7,6 +7,7 @@ import { Store, State } from '@ngrx/store';
 import * as fromRoot from '../index';
 import { DataService } from '../../services/data.service';
 import { Router } from '@angular/router';
+import { Category } from 'src/app/interface/Category';
 
 @Injectable()
 export class ProductsEffects {
@@ -40,6 +41,28 @@ export class ProductsEffects {
     );
   });
 
-
+  loadCategoryResults$ = createEffect(() => {
+    return this.actions$.pipe(ofType(ProductsActions.LOAD_CATEGORY_RESULTS),
+      switchMap(() => {
+        return this.dataService.getCategoryData()
+          .pipe(map(obj => {
+            console.log('get category result');
+            console.log(obj);
+            if (obj) {
+              console.log(obj);
+              const bannerData: Category[] = obj;
+              return ProductsActions.LoadCategoryResultsComplete({ payload: bannerData });
+            }
+            console.log('else retry');
+            return ProductsActions.LoadCategoryResults();
+          }),
+            catchError(error => {
+              console.log(error);
+              return of(ProductsActions.LoadCategoryResults());
+            })
+          );
+      })
+    );
+  });
 
 }

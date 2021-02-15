@@ -62,8 +62,16 @@ const getProductState = (state: State) => state.product;
 const getProductData = (state: ProductState) => {
   return state.productsData;
 };
+const getCategoryData = (state: ProductState) => {
+  return state.categoriesData;
+};
+const getFilterData = (state: ProductState) => {
+  return state.filter;
+};
 
 export const getProductDataSelector = createSelector(getProductState, getProductData);
+export const getCategoryDataSelector = createSelector(getProductState, getCategoryData);
+export const getFilterDataSelector = createSelector(getProductState, getFilterData);
 
 /**
  * Cart Selectors

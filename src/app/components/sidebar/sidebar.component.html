@@ -1,0 +1,11 @@
+<div class="sidebar-container">
+<!-- {{ categoriesData$ | async | json }} -->
+<div class="item-container">
+<ng-container *ngFor="let item of (categoriesData$ | async);let i=index;">
+  <div class="item">
+    <span (click)="categorySelect(item);">{{ item.name }}</span>
+  </div>
+</ng-container>
+</div>
+
+</div>
