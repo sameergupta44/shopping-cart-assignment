@@ -1,5 +1,5 @@
 <div class="cart-summary">
-  
+
   <table>
     <tr>
       <th>Sno</th>
@@ -11,7 +11,7 @@
     <tr *ngFor="let item of (cartDetails$ | async);let i = index;">
       <td>{{ i+1 }}</td>
       <td>{{ item.name }}</td>
-      <td>{{ item.quantity }}</td>
+      <td><button (click)="addToCart(item);"> Add </button> <label> {{ item.quantity }} </label> <button (click)="removeFromCart(item)"> Remove </button></td>
       <td> Rs {{ item.price }}</td>
       <td> Rs {{ item.quantity * item.price }}</td>
     </tr>

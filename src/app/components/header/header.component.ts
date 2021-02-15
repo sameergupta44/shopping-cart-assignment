@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   cartData$: Observable<any>;
 
   constructor(private store: Store<fromRoot.State>) {
-    this.cartData$ = this.store.select(fromRoot.getCartItemsSelector);
+    this.cartData$ = this.store.select(fromRoot.getCartItemsCountSelector);
    }
 
   ngOnInit(): void {
