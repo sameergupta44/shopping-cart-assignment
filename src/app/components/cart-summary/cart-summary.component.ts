@@ -55,4 +55,15 @@ export class CartSummaryComponent implements OnInit {
     this.store.dispatch(CartActions.CartRemoveItem({ payload: cartItem }));
 
   }
+
+  closeOverlay(): void {
+    const overlay = document.getElementById('overlay');
+    console.log(overlay);
+    if (overlay) {
+      overlay.classList.remove('sshow');
+      overlay.classList.add('hhidden');
+      console.log(overlay.classList);
+    }
+  }
+
 }

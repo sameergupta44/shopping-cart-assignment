@@ -2,7 +2,7 @@
   <!-- Length: {{ (productsFilteredData$ | async)?.length }} -->
   <app-cart-summary [cartDetails$]="cartData$"></app-cart-summary>
   <!-- <br> -->
-  {{ filterData$ | async | json }}
+  <!-- {{ filterData$ | async | json }} -->
   <div class="wrapper">
     <div class="sidebar">
       <app-sidebar [categoriesData$]="categoriesData$" (filter)="filterVal($event)"></app-sidebar>

@@ -1,13 +1,13 @@
 header .toolbar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: 60px;
   display: flex;
   align-items: center;
-  background-color: #eef0e2;
-  color: white;
+  background-color: #ffffff;
+  color: #000000;
   font-weight: 600;
   padding: 0 16px;
 
@@ -41,15 +41,21 @@ header .toolbar {
     }
 
     .content-bottom {
+      background-color: #e6e3e3ad;
       display: flex;
       justify-content: center;
+      padding: 5px;
+
+      &:hover {
+        cursor: pointer;
+      }
 
       img {
         margin: 0 5px;
       }
 
       .cart-text{
-        color: black;
+        color: #000000;
       }
     }
   }

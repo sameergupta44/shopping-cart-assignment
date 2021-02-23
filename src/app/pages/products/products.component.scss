@@ -1,9 +1,15 @@
 .wrapper {
   display: flex;
+  width: 100%;
+
+  .sidebar{
+    width: 20%;
+  }
 
   .product-items-container {
     display: flex;
     flex-wrap: wrap;
+    width: 80%;
 }
 
 }

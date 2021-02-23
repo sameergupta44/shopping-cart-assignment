@@ -15,7 +15,7 @@
         <a routerLink="login">Login</a>
         <a routerLink="register">Register</a>
       </div>
-      <div class="content-bottom">
+      <div class="content-bottom" (click)="toggleOverlay()">
         <img width="25" alt="Cart Logo" src="assets/images/cart.svg" />
         <span class="cart-text"> {{ (cartData$ | async) }} items </span>
       </div>
