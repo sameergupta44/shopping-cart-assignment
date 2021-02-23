@@ -15,9 +15,11 @@ export class CartSummaryComponent implements OnInit {
 
   @Input() cartDetails$!: Observable<any>;
   cartTotal$: Observable<any>;
+  cartData$: Observable<any>;
 
   constructor(private store: Store<fromRoot.State>) {
     this.cartTotal$ = this.store.select(fromRoot.getCartTotalSelector);
+    this.cartData$ = this.store.select(fromRoot.getCartItemsCountSelector);
    }
 
   ngOnInit(): void {

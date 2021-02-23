@@ -1,29 +1,55 @@
 <div id="overlay">
   <div class="cart-summary">
-    <span class="close" (click)="closeOverlay()">&times;</span>
-
-    <table>
-      <tr>
-        <th>Sno</th>
-        <th>Product Name</th>
-        <th>Quantity</th>
-        <th>Unit Price</th>
-        <th>Total</th>
-      </tr>
-      <tr *ngFor="let item of (cartDetails$ | async);let i = index;">
-        <td>{{ i+1 }}</td>
-        <td>{{ item.name }}</td>
-        <td><button (click)="addToCart(item);"> Add </button> <label> {{ item.quantity }} </label> <button
-            (click)="removeFromCart(item)"> Remove </button></td>
-        <td> Rs {{ item.price }}</td>
-        <td> Rs {{ item.quantity * item.price }}</td>
-      </tr>
-      <tr>
-        <td colspan="4"> Total</td>
-        <td> Rs {{ cartTotal$ | async}}</td>
-      </tr>
-
-    </table>
-    <!-- {{cartDetails$ | async | json }} -->
+    <header>
+      <span> My Cart({{ (cartData$ | async) }} item)
+      </span>
+      <span (click)="closeOverlay()" class="close">
+        &times;</span>
+    </header>
+    <div class="cart-container">
+      <div class="item" *ngFor="let item of (cartDetails$ | async);let i = index;">
+        <div class="icon"> <img [src]="'http://localhost/' + item.imageURL" alt="" /> </div>
+        <div class="qty">
+          <h3>{{item.name}}</h3>
+          <div>
+            <span class="change-qty" (click)="removeFromCart(item)">-</span> <span>{{ item.quantity }}</span> <span
+              class="change-qty" (click)="addToCart(item);">+</span> <span>x &nbsp; &nbsp;&nbsp;
+              Rs.{{ item.price }} </span>
+          </div>
+        </div>
+        <div class="price-item"> Rs. {{ item.quantity * item.price }} </div>
+      </div>
+      <div class="lowest-text" *ngIf="(cartDetails$ | async)?.length > 0">
+        <div>
+          <img [src]="'http://localhost/static/images/lowest-price.png'" alt="" />
+        </div>
+        <div>
+          You won't find it cheaper anywhere.
+        </div>
+      </div>
+      <div class="lowest-text no-items" *ngIf="(cartDetails$ | async)?.length === 0">
+        <span class="no-items-text">
+          No items in your cart
+        </span>
+        <span class="no-items-text-2">
+          Your favourite items are just a click away
+        </span>
+      </div>
+      <div class="checkout">
+        <small *ngIf="(cartDetails$ | async)?.length > 0">
+          Promo code can be applied on payment page.
+        </small>
+        <div class="checkout-btn" *ngIf="(cartDetails$ | async)?.length > 0">
+          <span>Proceed to checkout
+          </span>
+          <span>
+            Rs. {{ cartTotal$ | async }} &nbsp;&nbsp;&nbsp; <b>></b>
+          </span>
+        </div>
+        <div class="checkout-btn text-center" *ngIf="(cartDetails$ | async)?.length === 0">
+          <span>Start Shopping</span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
