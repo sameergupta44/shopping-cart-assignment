@@ -1,11 +1,12 @@
 .sidebar-container {
   background-color: #e6e3e3ad;
   padding: 10px;
+  height: 100%;
 
   .item {
     border-bottom: 0.5px rgb(167, 166, 166) solid;
     padding: 15px 0px 15px 30px;
     font-weight: 600;
-    color: gray;
+    color: #808080;
   }
 }

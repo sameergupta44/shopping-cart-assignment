@@ -36,9 +36,17 @@
       justify-content: space-between;
       padding: 10px 0px;
 
-      // .btn {
-      //   padding: 10px 20px;
-      // }
+      .price {
+        align-self: center;
+      }
+
+      .btn {
+        cursor: pointer;
+        background-color: #bf2957;
+        color: #ffffff;
+        padding: 10px 20px;
+        align-items: center;
+      }
     }
   }
 }

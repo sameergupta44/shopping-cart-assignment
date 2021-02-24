@@ -49,9 +49,8 @@
           class="form-control" name="confirmPassword">
           <div *ngIf="(confirmPassword.invalid && confirmPassword.touched) || confirmPassword.dirty">
             <small *ngIf="confirmPassword.errors?.required" class="text-danger">Confirm Password is required</small>
-            <small *ngIf="registerForm.get('password').value != registerForm.get('confirmPassword').value && registerForm.get('confirmPassword').value != null">
+            <small *ngIf="password.value != confirmPassword.value && confirmPassword.value != null">
               Password does not match</small>
-            <!-- <small *ngIf="password.errors?.identityRevealed" class="text-danger">Password Donot Match</small> -->
           </div>
       </div>
       <button [disabled]="!registerForm.valid" [ngClass]="{'disabled': !registerForm.valid}" type="submit" role="button">Signup</button>

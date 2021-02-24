@@ -1,5 +1,11 @@
-<div>
-Banner Data Loaded:
-{{ bannerData$ | async | json }}
-
+<div class="product-container">
+  <div class="home" >
+    <!-- {{ bannerData$ | async | json }} -->
+  <div >
+    <ng-container *ngFor="let item of (categoriesData$ | async);let i=index">
+      <app-card-home *ngIf="item.enabled" [item]="item" [idx]="i"></app-card-home>
+    </ng-container>
+    <!-- {{ categoriesData$ | async | json }} -->
+   </div>
+  </div>
 </div>

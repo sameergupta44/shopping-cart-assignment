@@ -19,6 +19,7 @@ import { ProductsEffects } from './reducers/products/products.effects';
 import { CardComponent } from './components/card/card.component';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { CardHomeComponent } from './components/card-home/card-home.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     ProductsComponent,
     CardComponent,
     CartSummaryComponent,
-    SidebarComponent
+    SidebarComponent,
+    CardHomeComponent
   ],
   imports: [
     BrowserModule,
