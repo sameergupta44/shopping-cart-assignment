@@ -19,8 +19,14 @@ export class LoginComponent implements OnInit {
 
   private initForm(): FormGroup {
     const formVals = {
-      username: new FormControl('', Validators.compose( [ Validators.required ] ) ),
-      password: new FormControl('',  Validators.compose( [ Validators.required ] ) ),
+      username: new FormControl('', Validators.compose( [
+        Validators.required,
+        Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')
+      ] ) ),
+      password: new FormControl('',  Validators.compose( [
+        Validators.required,
+        Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[\\d])[A-Za-z\\d]{6,}$')
+      ] ) ),
     };
 
     return this.fb.group(formVals);
@@ -39,6 +45,14 @@ export class LoginComponent implements OnInit {
   onSubmit(): void {
    const { username, password } = this.loginForm.value;
    this.store.dispatch(LoginActions.LoginAttempt({ payload: { username, password } } ));
+  }
+
+  get username(): any{
+    return this.loginForm.get('username');
+  }
+
+  get password(): any{
+    return this.loginForm.get('password');
   }
 
 }

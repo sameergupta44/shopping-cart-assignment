@@ -1,8 +1,9 @@
 footer.toolbar {
 
-  background-color: rgb(122, 107, 107);
-
-  .content {
-    font-size: 21px;
-  }
+  background-color: #e6e3e3ad;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  text-align: center;
 }
+

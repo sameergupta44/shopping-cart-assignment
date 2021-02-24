@@ -22,6 +22,25 @@ export class LoginEffects {
     );
   }, { dispatch: false });
 
+  register$ = createEffect(() => {
+    return this.actions$.pipe(ofType(LoginActions.REGISTER_ATTEMPT),
+     map((action: any) => action.payload),
+      switchMap((data: any) => {
+        return this.dataService.registerCheck(data)
+          .pipe(map(obj => {
+            console.log('get result');
+            console.log(obj);
+          }),
+            tap(() => this.router.navigate(['home'])),
+            catchError(error => {
+              console.log(error);
+              return of(LoginActions.LoginAttemptFail());
+            })
+          );
+      })
+    );
+  }, { dispatch: false });
+
   loadResults$ = createEffect(() => {
     return this.actions$.pipe(ofType(LoginActions.LOGIN_ATTEMPT),
      map((action: any) => action.payload),

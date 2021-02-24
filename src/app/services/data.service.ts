@@ -7,7 +7,6 @@ import { delay, map, switchMap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class DataService {
-
   private HOST_NAME = 'http://localhost:5000';
 
   constructor(private http: HttpClient) { }
@@ -28,10 +27,19 @@ export class DataService {
     console.log(data);
     return of(data).pipe(
       map(val => {
-        if (val.username === 'sameer@gupta.com' && val.password === 'Hello@1234') {
+        if (val.username === 'sameer@gupta.com' && val.password === 'Hello1234') {
           return true;
         }
         return false;
+      }),
+      delay(1000));
+  }
+
+  registerCheck(data: any): Observable<any> {
+    console.log(data);
+    return of(data).pipe(
+      map(val => {
+        return true;
       }),
       delay(1000));
   }
