@@ -120,7 +120,7 @@
     }
 
     .checkout-btn {
-      background-color: #bf2957;
+      background-color: $btn-bg-color;
       color: $white;
       padding: 0 20px;
       height: 40px;
@@ -157,7 +157,7 @@
       bottom: 20px;
     }
     .change-qty {
-      background-color: #bf2957;
+      background-color: $btn-bg-color;
       border-radius: 50%;
       color: $white;
       text-align: center;
