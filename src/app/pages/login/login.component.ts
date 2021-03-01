@@ -15,7 +15,6 @@ export class LoginComponent implements OnInit {
 
   bannerData: any[] = [];
   loginForm: FormGroup;
-  loginStatus$: Observable<any>;
 
   private initForm(): FormGroup {
     const formVals = {
@@ -35,7 +34,6 @@ export class LoginComponent implements OnInit {
   constructor(private fb: FormBuilder,
               private store: Store<fromRoot.State>) {
       this.loginForm = this.initForm();
-      this.loginStatus$ = this.store.select(fromRoot.isUserLoggedInSelector);
      }
 
   ngOnInit(): void {

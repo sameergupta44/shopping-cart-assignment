@@ -10,9 +10,11 @@ import { Observable } from 'rxjs';
 export class HeaderComponent implements OnInit {
 
   cartData$: Observable<any>;
+  loginStatus$: Observable<any>;
 
   constructor(private store: Store<fromRoot.State>) {
     this.cartData$ = this.store.select(fromRoot.getCartItemsCountSelector);
+    this.loginStatus$ = this.store.select(fromRoot.isUserLoggedInSelector);
   }
 
   ngOnInit(): void {

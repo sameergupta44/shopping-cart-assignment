@@ -11,11 +11,8 @@
 
 //variables
 $font-dosis: 'dosis';
-
-// $large-desktop: new-breakpoint(min-width 77.438em);// max 1239.008px
-// $small-desktop: new-breakpoint(min-width 63.938em);// max 1023.008px
-// $tablet: new-breakpoint(min-width 47.938em); // max 767.008px
-// $mobile: new-breakpoint(min-width 39.938em);// max 639.008px
+$link-text-color: #808080;
+$background-grey: #e6e3e3ad;
 
 $large-desktop: new-breakpoint(min-width 75em);// max 1200px
 $small-desktop: new-breakpoint(min-width 62em);// max 992px

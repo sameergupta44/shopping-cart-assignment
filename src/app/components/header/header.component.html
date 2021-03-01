@@ -12,7 +12,7 @@
     <div class="spacer"></div>
     <div class="content-right">
       <div class="content-top">
-        <a routerLink="login">Login</a>
+        <a routerLink="login">{{ (loginStatus$ | async)? 'Sameer' : 'Login' }}</a>
         <a routerLink="register">Register</a>
       </div>
       <div class="content-bottom" (click)="toggleOverlay()">

@@ -1,3 +1,5 @@
+@import "~src/variables";
+
 header .toolbar {
   position: fixed;
   top: 0;
@@ -13,6 +15,8 @@ header .toolbar {
 
   a {
     margin: 5px;
+    text-decoration: none;
+    color: $link-text-color;
   }
 
   .content-left {
@@ -23,8 +27,11 @@ header .toolbar {
     }
 
     .menu-items {
-      display: flex;
-      align-items: center;
+      display: none;
+      @include media($tablet) {
+        display: flex;
+        align-items: center;
+      }
     }
   }
 
@@ -37,14 +44,20 @@ header .toolbar {
     flex-direction: column;
 
     .content-top {
-      display: flex;
+      display: none;
+      @include media($tablet) {
+        display: flex;
+      }
     }
 
     .content-bottom {
-      background-color: #e6e3e3ad;
+      background-color: $background-grey;
       display: flex;
       justify-content: center;
-      padding: 5px;
+      padding: 15px;
+      @include media($tablet) {
+        padding: 5px;
+      }
 
       &:hover {
         cursor: pointer;

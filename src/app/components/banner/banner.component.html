@@ -1,0 +1,11 @@
+<div class="wrapper">
+  <!-- {{ bannerData$ | async | json }} -->
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let slide of (bannerData$ | async)">
+      <ng-template class="slide" carouselSlide [id]="slide.id">
+        <img [src]="'http://localhost' + slide.bannerImageUrl" [alt]="slide.bannerImageAlt" [title]="slide.bannerImageAlt">
+      </ng-template>
+    </ng-container>
+
+  </owl-carousel-o>  
+</div>

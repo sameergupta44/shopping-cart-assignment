@@ -20,6 +20,9 @@ import { CardComponent } from './components/card/card.component';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CardHomeComponent } from './components/card-home/card-home.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BannerComponent } from './components/banner/banner.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -33,13 +36,16 @@ import { CardHomeComponent } from './components/card-home/card-home.component';
     CardComponent,
     CartSummaryComponent,
     SidebarComponent,
-    CardHomeComponent
+    CardHomeComponent,
+    BannerComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    CarouselModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {

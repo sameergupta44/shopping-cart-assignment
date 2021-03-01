@@ -1,6 +1,7 @@
-footer.toolbar {
+@import "~src/variables";
 
-  background-color: #e6e3e3ad;
+footer.toolbar {
+  background-color: $background-grey;
   display: flex;
   justify-content: space-evenly;
   padding: 10px;

@@ -1,12 +1,64 @@
+@import "~src/variables";
+
 .sidebar-container {
-  background-color: #e6e3e3ad;
+  background-color: $background-grey;
   padding: 10px;
   height: 100%;
+
+  .mobile-container {
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .mobile-control {
+      display: inline;
+      background-color: #f39191ad;
+      color: #ffffff;
+      padding: 2px;
+      margin-right: 10px;
+      @include media($tablet){
+        display: none;
+      }
+    }
+
+  }
 
   .item {
     border-bottom: 0.5px rgb(167, 166, 166) solid;
     padding: 15px 0px 15px 30px;
     font-weight: 600;
-    color: #808080;
+    cursor: pointer;
+    color: $link-text-color;
+    
+    &:hover {
+      background-color: #6d6767ad;
+      color: #ffffff;
+     }
+  }
+
+
+  .active {
+    background-color: #b48b8bad;
+    color: #ffffff;
+  }
+
+  .expand {
+    .item {
+      display: flex;
+    }
+  }
+
+  .collapse {
+    .item {
+      display: none;
+        &:first-child {
+          display: flex;
+        }
+        @include media($tablet){
+          display: flex;
+        }
+    }
   }
 }

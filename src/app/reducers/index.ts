@@ -50,7 +50,9 @@ export const isUserLoggedInSelector = createSelector(getLoginState, isUserLogged
  */
 const getHomeState = (state: State) => state.home;
 const getBannerData = (state: HomeState) => {
-  return state.bannerData;
+  return state.bannerData.filter(slide => slide.isActive).sort((a, b) => {
+    return a.order - b.order;
+  });
 };
 
 export const getBannerDataSelector = createSelector(getHomeState, getBannerData);
@@ -63,7 +65,9 @@ const getProductData = (state: ProductState) => {
   return state.productsData;
 };
 const getCategoryData = (state: ProductState) => {
-  return state.categoriesData;
+  return state.categoriesData.filter(i => i.enabled).sort((a, b) => {
+    return a.order - b.order;
+  });
 };
 const getFilterData = (state: ProductState) => {
   return state.filter;

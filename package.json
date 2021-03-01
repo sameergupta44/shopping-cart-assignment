@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
     "start-proxy": "ng serve --proxy-config proxy.config.json",
-    "start-app": "node server.js",
-    "build": "ng build",
-    "test-github": "ng test --watch=false --browsers=ChromeHeadless",
     "start-server": "canned -p 5000 ./server",
+    "start-img-server": "node server.js",
+    "build": "ng build",
+   
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -26,6 +25,8 @@
     "@ngrx/effects": "^11.0.0",
     "@ngrx/store": "^11.0.0",
     "canned": "^0.3.12",
+    "express": "^4.17.1",
+    "ngx-owl-carousel-o": "^5.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

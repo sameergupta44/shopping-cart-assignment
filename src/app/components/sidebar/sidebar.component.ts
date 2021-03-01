@@ -11,14 +11,26 @@ export class SidebarComponent implements OnInit {
 
   @Input()  categoriesData$!: Observable<any>;
   @Output() filter = new EventEmitter();
+  @Input() filterData: any = [];
+  mobileExpanded = false;
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit(): void {
   }
 
   categorySelect(category: Category): void{
     this.filter.emit(category);
+  }
+
+  getActiveClass(item: any): boolean{
+    const val = this.filterData.filter( (i: { id: string; }) => i.id === item.id);
+    return val.length > 0 ? true : false;
+  }
+
+  toggle(): void {
+    this.mobileExpanded = !this.mobileExpanded;
   }
 
 }

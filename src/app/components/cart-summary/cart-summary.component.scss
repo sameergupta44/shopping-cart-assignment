@@ -1,3 +1,5 @@
+@import "~src/variables";
+
 #overlay {
   position: fixed;
   display: none;
@@ -32,10 +34,16 @@
 
 .cart-summary {
   background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
   border: 1px solid #888888;
-  width: 80%;
+  width: 100%;
+  height: 100%;
+
+  @include media($small-desktop) {
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    height: auto;
+  }
 
   header {
     display: flex;
@@ -76,6 +84,11 @@
     }
   }
 
+  .cart-container {
+    display: flex;
+    flex-direction: column;
+  }
+
   .no-items {
     flex-direction: column;
     font-size: 18px;
@@ -91,7 +104,8 @@
   }
 
   .checkout {
-    // position: absolute;
+    display: flex;
+    flex-direction: column;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -99,6 +113,11 @@
     background-color: #ffffff;
     text-align: center;
     box-sizing: border-box;
+    position: fixed;
+
+    @include media($small-desktop) {
+      position: static;  
+    }
 
     .checkout-btn {
       background-color: #bf2957;
