@@ -51,7 +51,7 @@
     justify-content: space-between;
     align-items: center;
     height: 50px;
-    color: #ffffff;
+    color: $white;
     font-weight: 600;
     padding: 0 20px;
     font-size: 1.2rem;
@@ -63,7 +63,7 @@
 
       &:hover,
       &:focus {
-        color: #ffffff;
+        color: $white;
         text-decoration: none;
         cursor: pointer;
       }
@@ -74,7 +74,7 @@
     display: flex;
     height: 50px;
     align-items: center;
-    background-color: #ffffff;
+    background-color: $white;
     font-size: 0.7rem;
     padding: 0 20px;
 
@@ -110,7 +110,7 @@
     left: 0;
     width: 100%;
     padding: 10px 0px;
-    background-color: #ffffff;
+    background-color: $white;
     text-align: center;
     box-sizing: border-box;
     position: fixed;
@@ -120,8 +120,8 @@
     }
 
     .checkout-btn {
-      background-color: #bf2957;
-      color: #ffffff;
+      background-color: $btn-bg-color;
+      color: $white;
       padding: 0 20px;
       height: 40px;
       display: flex;
@@ -140,7 +140,7 @@
     display: flex;
     padding: 20px;
     box-sizing: border-box;
-    background-color: #ffffff;
+    background-color: $white;
     align-items: center;
     margin-bottom: 10px;
     position: relative;
@@ -157,9 +157,9 @@
       bottom: 20px;
     }
     .change-qty {
-      background-color: #bf2957;
+      background-color: $btn-bg-color;
       border-radius: 50%;
-      color: #ffffff;
+      color: $white;
       text-align: center;
       height: 20px;
       width: 20px;

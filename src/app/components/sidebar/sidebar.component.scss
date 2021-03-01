@@ -15,7 +15,7 @@
     .mobile-control {
       display: inline;
       background-color: #f39191ad;
-      color: #ffffff;
+      color: $white;
       padding: 2px;
       margin-right: 10px;
       @include media($tablet){
@@ -34,14 +34,14 @@
     
     &:hover {
       background-color: #6d6767ad;
-      color: #ffffff;
+      color: $white;
      }
   }
 
 
   .active {
     background-color: #b48b8bad;
-    color: #ffffff;
+    color: $white;
   }
 
   .expand {

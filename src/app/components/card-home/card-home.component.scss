@@ -1,3 +1,5 @@
+@import "~src/variables";
+
 .category-card {
   display: flex;
   justify-content: space-between;
@@ -6,7 +8,7 @@
   border-bottom: solid 0.5px lightgray;
 
   .shadow {
-    box-shadow: black 0 0 10px 1px;
+    box-shadow: $black 0 0 10px 1px;
     border-radius: 50%;
   }
 
@@ -20,8 +22,8 @@
     .btn {
       margin-top: 10px;
       cursor: pointer;
-      background-color: #bf2957;
-      color: #ffffff;
+      background-color: $btn-bg-color;
+      color: $white;
       padding: 10px 20px;
       align-items: center;
     }
