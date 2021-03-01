@@ -1,0 +1,59 @@
+<div class="register-container">
+  <div class="container-left">
+    <span class="register">
+      Signup
+    </span>
+    <span class="register-subtext">
+      We do not share your personal details with anyone.
+    </span>
+  </div>
+  <div class="container-right">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input name="firstName" type="text" placeholder="First Name" formControlName="firstName" class="form-control"
+          name="firstName">
+          <div *ngIf="(firstName.invalid && firstName.touched) || firstName.dirty">
+            <small *ngIf="firstName.errors?.required" class="text-danger">First Name is required</small>
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input name="lastName" type="text" placeholder="Last Name" formControlName="lastName" class="form-control"
+          name="lastName">
+          <div *ngIf="(lastName.invalid && lastName.touched) || lastName.dirty">
+            <small *ngIf="lastName.errors?.required" class="text-danger">Last Name is required</small>
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="username">Email</label>
+        <input name="username" type="text" placeholder="Email" formControlName="username" class="form-control"
+          name="username">
+          <div *ngIf="(username.invalid && username.touched) || username.dirty">
+            <small *ngIf="username.errors?.required" class="text-danger">Email is required</small>
+            <small *ngIf="username.errors?.pattern" class="text-danger">Please provide a valid email address</small>
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input name="passowrd" type="password" placeholder="Password" formControlName="password"
+          class="form-control" name="password">
+          <div *ngIf="(password.invalid && password.touched) || password.dirty">
+            <small *ngIf="password.errors?.required" class="text-danger">Password is required</small>
+            <small *ngIf="password.errors?.pattern" class="text-danger">Please provide a valid Password Format</small>
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input name="confirmPassword" type="password" placeholder="Confirm Password" formControlName="confirmPassword"
+          class="form-control" name="confirmPassword">
+          <div *ngIf="(confirmPassword.invalid && confirmPassword.touched) || confirmPassword.dirty">
+            <small *ngIf="confirmPassword.errors?.required" class="text-danger">Confirm Password is required</small>
+            <small *ngIf="password.value != confirmPassword.value && confirmPassword.value != null">
+              Password does not match</small>
+          </div>
+      </div>
+      <button [disabled]="!registerForm.valid" [ngClass]="{'disabled': !registerForm.valid}" type="submit" role="button">Signup</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+@import "~src/variables";
+
+footer.toolbar {
+  background-color: $background-grey;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  text-align: center;
+}
+

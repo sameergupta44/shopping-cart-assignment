@@ -1,0 +1,22 @@
+@function new-breakpoint($query: $feature $value) {
+  @return $query;
+}
+
+@mixin media($query: $feature $value) {
+  $media-query: "screen and (" + nth($query , 1 ) + ": " + nth($query, 2) + ")";
+  @media #{$media-query} {
+    @content;
+  }
+}
+
+//variables
+$font-dosis: 'dosis';
+$link-text-color: #808080;
+$background-grey: #e6e3e3ad;
+
+$large-desktop: new-breakpoint(min-width 75em);// max 1200px
+$small-desktop: new-breakpoint(min-width 62em);// max 992px
+$tablet: new-breakpoint(min-width 48em); // max 768px
+$large-mobile: new-breakpoint(min-width 34em);// max 544px
+
+

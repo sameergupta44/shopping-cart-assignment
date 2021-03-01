@@ -1,0 +1,75 @@
+@import "~src/variables";
+
+header .toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 600;
+  padding: 0 16px;
+
+  a {
+    margin: 5px;
+    text-decoration: none;
+    color: $link-text-color;
+  }
+
+  .content-left {
+    display: flex;
+
+    img {
+      margin: 0 16px;
+    }
+
+    .menu-items {
+      display: none;
+      @include media($tablet) {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .content-right {
+    display: flex;
+    flex-direction: column;
+
+    .content-top {
+      display: none;
+      @include media($tablet) {
+        display: flex;
+      }
+    }
+
+    .content-bottom {
+      background-color: $background-grey;
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      @include media($tablet) {
+        padding: 5px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      img {
+        margin: 0 5px;
+      }
+
+      .cart-text{
+        color: #000000;
+      }
+    }
+  }
+}

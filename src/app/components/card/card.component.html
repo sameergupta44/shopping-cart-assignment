@@ -1,0 +1,29 @@
+<ng-container>
+<div class="card desktop-only">
+  <div class="img-wrap">
+    <img [src]="'http://localhost' + item.imageURL" [alt]="item?.name" />
+  </div>
+  <div class="container">
+    <div class="item-name">{{ item?.name }}</div>
+    <div class="description">{{ item?.description }}</div>
+    <div class="controls">
+      <div class="price"><label>MRP Rs {{item?.price}}</label></div>
+      <div><div class="btn" role="button" (click)="addToCart(item)">Add To Cart</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="card mobile">
+  <div class="item-name">{{ item?.name }}</div>
+  <div class="container">
+    <div class="img-wrap">
+      <img [src]="'http://localhost' + item.imageURL" [alt]="item?.name" />
+    </div>
+    <div class="controls">
+      <div class="description">{{ item?.description }}</div>
+      <div><div class="btn mobile-only" role="button" (click)="addToCart(item)">Buy Now @ MRP Rs.{{item?.price}}</div></div>
+    </div>
+  </div>
+  <div class="btn tablet-only" role="button" (click)="addToCart(item)">Buy Now @ MRP Rs.{{item?.price}}</div>
+</div>
+</ng-container>

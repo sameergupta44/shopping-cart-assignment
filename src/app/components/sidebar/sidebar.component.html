@@ -1,0 +1,12 @@
+<div class="sidebar-container">
+<!-- {{ filterData$ | async | json }} -->
+<div class="item-container mobile-container" [ngClass]="{'collapse': !mobileExpanded, 'expand': mobileExpanded}">
+<ng-container *ngFor="let item of (categoriesData$ | async);let i=index;">
+  <div class="item" [ngClass]="{'active': getActiveClass(item)}">
+    <span (click)="categorySelect(item);">{{ item.name }}</span>
+    <span *ngIf="i === 0" class="mobile-control"><a (click)="toggle()">{{ mobileExpanded? 'Collapse' : 'Expand'}}</a></span>
+  </div>
+</ng-container>
+</div>
+
+</div>

@@ -13,3 +13,9 @@ npm run start
 yarn install
 yarn start
 ```
+# Executing This Project:
+- Open cmd and run `npm install`
+- Open another cmd and run `npm run start-server`.
+- Open another cmd and run `npm run start-img-server`.
+- Open another cmd and run `npm run start-proxy`.
+- username / password is sameer@gupta.com / Hello1234

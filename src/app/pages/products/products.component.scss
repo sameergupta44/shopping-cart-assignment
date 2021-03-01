@@ -1,0 +1,36 @@
+@import "~src/variables";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @include media($tablet) {
+    flex-direction: row;
+  }
+
+  .sidebar {
+    width: 100%;
+    @include media($tablet) {
+      width: 15%;
+    }
+    @include media($small-desktop) {
+      width: 20%;
+    }
+  }
+
+  .product-items-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    max-width: 1290px;
+    @include media($tablet) {
+      justify-content: left;
+      width: 85%;
+    }
+    @include media($small-desktop) {
+      width: 80%;
+    }
+  }
+}

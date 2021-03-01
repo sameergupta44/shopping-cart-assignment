@@ -1,0 +1,16 @@
+<div class="category-card" [ngClass]="{'odd-class': ( idx % 2 !== 0 ), 'even-class': ( idx % 2 === 0 ) }">
+  <!-- {{ item | json}} -->
+<div>
+  <img [src]="'http://localhost' + item.imageUrl" alt="" />
+</div>
+<div class="info">
+  <h2>{{ item.name }}
+  </h2>
+  <div>
+    {{ item.description }}
+  </div>
+  <div style="width:'max-content';padding:'10px 20px'" class="btn">
+    Explore {{ item.key }}
+  </div>
+</div>
+</div>

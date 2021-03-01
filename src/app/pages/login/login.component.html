@@ -1,0 +1,33 @@
+<div class="login-container">
+  <div class="container-left">
+    <span class="login">
+      Login
+    </span>
+    <span class="login-subtext">
+      Get access to your Orders,Wishlist and Recommendations
+    </span>
+  </div>
+  <div class="container-right">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Email</label>
+        <input name="username" type="text" placeholder="Email" formControlName="username" class="form-control"
+          name="username">
+          <div *ngIf="(username.invalid && username.touched) || username.dirty">
+            <small *ngIf="username.errors?.required" class="text-danger">Email is required</small>
+            <small *ngIf="username.errors?.pattern" class="text-danger">Please provide a valid email address</small>
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input name="passowrd" type="password" placeholder="Password" formControlName="password"
+          class="form-control" name="password">
+          <div *ngIf="(password.invalid && password.touched) || password.dirty">
+            <small *ngIf="password.errors?.required" class="text-danger">Password is required</small>
+            <small *ngIf="password.errors?.pattern" class="text-danger">Please provide a valid Password Format</small>
+          </div>
+      </div>
+      <button [disabled]="!loginForm.valid" [ngClass]="{'disabled': !loginForm.valid}" type="submit" role="button">Login</button>
+    </form>
+  </div>
+</div>
